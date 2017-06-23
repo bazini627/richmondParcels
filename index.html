@@ -46,7 +46,7 @@
             font-size: 1em;
             color: #001323;
         }
-        
+
     </style>
 </head>
 
@@ -63,7 +63,7 @@
         <p>This map shows parcels of land that are now owned by the City of Richmond that were formerly owned by the Successor Agency to the Redevelopment Agency and their proximity to AC transit bus stop locations.  All the information for the parcels was obtained from Richmond's <a href="http://www.ci.richmond.ca.us/documentcenter/view/36959">Long Range Property Management Plan</a> document.  Parcel polygon data was downloaded from the <a href="http://www.ccmap.us/information.asp">Contra Costa County Mapping Information Center</a>.  Bus stop location data was downloaded from the AC Transit <a href="http://www.actransit.org/planning-focus/data-resource-center/">Data Resource Center</a>.  Parcel Locations layer will dissolve as you zoom in and the bus stop locations will become visible.  The individual parcel polygons can be clicked to reveal its Assesor's Parcel Number(APN) and planned use.  The APN can be used to look up more detailed information in the Long Range Property Management Plan document.  All bus stop locations on this map are within 400 meters (1/4 mile) of the parcels.  A distance of 400 meters was used since this is a reasonable walking distance for most people.
         </p>
     </footer>
-    
+
      <!-- Adding CartoDB.js library when using https -->
       <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
 
@@ -78,15 +78,15 @@
                   maxZoom: 18,
                   detectRetina: true
                });
-               
+
                // Set the base map tile
-               L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+               L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CARTO</a>'
                }).addTo(mapObj);
-               
+
                // RLRPMP Layer
                var vizjson_url = 'https://bazini627.carto.com/api/v2/viz/9e21bc18-3b2f-11e6-a41a-0ecfd53eb7d3/viz.json';
-               
+
                // Adding RLRPMP layer to map
                cartodb.createLayer(mapObj, vizjson_url)
                   .addTo(mapObj)
