@@ -78,11 +78,13 @@
                   maxZoom: 18,
                   detectRetina: true
                });
-
-               // Set the base map tile
-               L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-               attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CARTO</a>'
-               }).addTo(mapObj);
+                
+               // Load map tiles from CARTO and add to map
+                var tiles = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a> | Map Authored by <a href="https://bazini627.github.io/" target="blank">Matthew Bacinskas</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 18
+                }).addTo(mapObj);
 
                // RLRPMP Layer
                var vizjson_url = 'https://bazini627.carto.com/api/v2/viz/9e21bc18-3b2f-11e6-a41a-0ecfd53eb7d3/viz.json';
